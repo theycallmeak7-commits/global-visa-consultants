@@ -42,7 +42,9 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 160px;
+    width: 100%;
+    overflow-x: clip;
 }
 
 body {
@@ -51,6 +53,7 @@ body {
     background: var(--bg);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
 }
@@ -115,23 +118,85 @@ ul {
 }
 
 /* ===========================
-   Navigation
+   Fixed Header (Address Bar + Nav)
    =========================== */
-.navbar {
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 16px 0;
-    transition: all var(--transition);
+}
+
+/* ===========================
+   Top Address Bar
+   =========================== */
+.topbar {
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.82rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.topbar-loc,
+.topbar-contact {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.topbar-contact {
+    margin-left: auto;
+}
+
+.topbar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+a.topbar-item {
+    transition: color var(--transition);
+}
+
+a.topbar-item:hover {
+    color: var(--accent-light);
+}
+
+.topbar-item svg {
+    stroke: var(--accent);
+    flex-shrink: 0;
+}
+
+/* ===========================
+   Navigation
+   =========================== */
+.navbar {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: var(--shadow-sm);
+    padding: 14px 0;
+    transition: box-shadow var(--transition), padding var(--transition), background var(--transition);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.88);
     box-shadow: var(--shadow-md);
     padding: 10px 0;
 }
@@ -163,7 +228,8 @@ ul {
 }
 
 .logo-accent {
-    color: var(--accent);
+    color: #a5761f;
+    font-weight: 800;
 }
 
 .nav-links {
@@ -183,6 +249,10 @@ ul {
 }
 
 .nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a.active {
     color: var(--primary);
 }
 
@@ -268,7 +338,7 @@ ul {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 120px 0 80px;
+    padding: 190px 0 90px;
 }
 
 .hero-bg {
@@ -379,12 +449,13 @@ ul {
 }
 
 .gradient-text {
-    background: linear-gradient(120deg, #f3d492, var(--accent) 55%, var(--accent-dark));
+    background: linear-gradient(120deg, #f5c66e, var(--accent) 40%, #c08a25 80%, #9a7226);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: shine 6s linear infinite;
+    filter: drop-shadow(0 6px 22px rgba(212, 168, 83, 0.3));
 }
 
 @keyframes shine {
@@ -638,6 +709,45 @@ ul {
     background: var(--glass-bg-strong);
 }
 
+/* Glow shine that also runs on touch devices (no hover) */
+@media (hover: none) {
+    .service-card::before {
+        animation: cardShine 7s ease-in-out infinite;
+    }
+    .service-card:nth-child(2)::before { animation-delay: 1s; }
+    .service-card:nth-child(3)::before { animation-delay: 2s; }
+    .service-card:nth-child(4)::before { animation-delay: 3s; }
+    .service-card:nth-child(5)::before { animation-delay: 4s; }
+}
+
+@keyframes cardShine {
+    0%, 58% { left: -40%; }
+    78% { left: 120%; }
+    100% { left: 120%; }
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .navbar,
+    .glass,
+    .hero-badge,
+    .hero-stats,
+    .section-tag,
+    .service-card,
+    .feature-item,
+    .p-card,
+    .testimonial-card,
+    .cta-card,
+    .cta-form input,
+    .cta-form select,
+    .cta-form textarea {
+        background-color: rgba(255, 255, 255, 0.93);
+    }
+    .service-card.featured-alt {
+        background: linear-gradient(160deg, var(--primary), var(--primary-dark));
+    }
+}
+
 .service-card.featured {
     border: 2px solid var(--accent);
     background: linear-gradient(160deg, rgba(255, 255, 255, 0.85), rgba(255, 245, 225, 0.6));
@@ -728,7 +838,7 @@ ul {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.7);
-    color: var(--text-light);
+    color: var(--primary-dark);
     padding: 5px 14px;
     border-radius: var(--radius-xl);
     font-size: 0.78rem;
@@ -1578,6 +1688,8 @@ ul {
     position: fixed;
     bottom: 26px;
     right: 26px;
+    left: auto;
+    direction: ltr;
     background: linear-gradient(135deg, #2bd867, #25d366);
     width: 60px;
     height: 60px;
@@ -1705,6 +1817,15 @@ ul {
         display: flex;
     }
 
+    .topbar-inner {
+        justify-content: center;
+    }
+
+    .topbar-loc,
+    .topbar-contact {
+        gap: 12px 20px;
+    }
+
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
@@ -1721,13 +1842,39 @@ ul {
     }
 
     .hero {
-        padding: 130px 0 90px;
+        padding: 210px 0 90px;
     }
 }
 
 @media (max-width: 600px) {
     .container {
         padding: 0 20px;
+    }
+
+    .topbar {
+        font-size: 0.75rem;
+    }
+
+    .topbar-item {
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .topbar-inner {
+        gap: 6px;
+    }
+
+    .topbar-loc,
+    .topbar-contact {
+        gap: 6px 16px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    html {
+        scroll-padding-top: 200px;
     }
 
     .form-row {

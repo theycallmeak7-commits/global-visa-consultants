@@ -112,33 +112,50 @@ const statsSection = document.querySelector('.hero-stats');
 if (statsSection) statsObserver.observe(statsSection);
 
 // ===========================
-// Form Handling
+// Form Handling — sends enquiry via WhatsApp
 // ===========================
 const contactForm = document.getElementById('contactForm');
+const WHATSAPP_NUMBER = '923268653443';
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    const formData = new FormData(contactForm);
+
+    const fields = contactForm.elements;
+    const name  = fields[0].value.trim();
+    const email = fields[1].value.trim();
+    const phone = fields[2] ? fields[2].value.trim() : '';
+    const service = fields[3] ? fields[3].options[fields[3].selectedIndex].text : '';
+    const message = fields[4] ? fields[4].value.trim() : '';
+
     const btn = contactForm.querySelector('button');
-    const originalText = btn.innerHTML;
-    
-    // Show loading state
-    btn.innerHTML = '<span>Sending...</span>';
+    const originalHTML = btn.innerHTML;
+
+    const text = encodeURIComponent(
+        `Hello MAK Residency! I'd like a free consultation.\n\n` +
+        `Name: ${name}\nEmail: ${email}` +
+        (phone ? `\nPhone: ${phone}` : '') +
+        (service && service !== 'Select Service Interest' ? `\nService: ${service}` : '') +
+        (message ? `\nDetails: ${message}` : '')
+    );
+
+    btn.innerHTML = '<span>Opening WhatsApp...</span>';
     btn.disabled = true;
-    
-    // Simulate form submission (replace with actual form handler)
+
     setTimeout(() => {
-        btn.innerHTML = '<span>✓ Message Sent!</span>';
-        btn.style.background = '#10b981';
-        
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+
+        btn.innerHTML = '<span>✓ Opening WhatsApp!</span>';
+        btn.style.background = 'linear-gradient(135deg, #2bd867, #25d366)';
+        btn.style.color = '#fff';
+
         setTimeout(() => {
-            btn.innerHTML = originalText;
+            btn.innerHTML = originalHTML;
             btn.style.background = '';
+            btn.style.color = '';
             btn.disabled = false;
             contactForm.reset();
         }, 3000);
-    }, 1500);
+    }, 800);
 });
 
 // ===========================
@@ -173,9 +190,9 @@ const highlightNav = () => {
         
         if (navLink) {
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLink.style.color = 'var(--primary)';
+                navLink.classList.add('active');
             } else {
-                navLink.style.color = '';
+                navLink.classList.remove('active');
             }
         }
     });

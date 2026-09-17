@@ -42,7 +42,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 160px;
+    scroll-padding-top: 110px;
     width: 100%;
     overflow-x: clip;
 }
@@ -52,6 +52,7 @@ body {
     color: var(--text);
     background: var(--bg);
     line-height: 1.6;
+    padding-bottom: 56px;
     overflow-x: hidden;
     width: 100%;
     -webkit-font-smoothing: antialiased;
@@ -118,7 +119,7 @@ ul {
 }
 
 /* ===========================
-   Fixed Header (Address Bar + Nav)
+   Fixed Header (Navigation)
    =========================== */
 .site-header {
     position: fixed;
@@ -129,16 +130,22 @@ ul {
 }
 
 /* ===========================
-   Top Address Bar
+   Fixed Bottom Address Bar
    =========================== */
-.topbar {
+.bottombar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
     background: linear-gradient(90deg, var(--primary-dark), var(--primary));
     color: rgba(255, 255, 255, 0.92);
     font-size: 0.82rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 -10px 30px rgba(15, 31, 54, 0.25);
 }
 
-.topbar-inner {
+.bottombar-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -148,19 +155,19 @@ ul {
     padding-bottom: 9px;
 }
 
-.topbar-loc,
-.topbar-contact {
+.bottombar-loc,
+.bottombar-contact {
     display: flex;
     align-items: center;
     gap: 24px;
     flex-wrap: wrap;
 }
 
-.topbar-contact {
+.bottombar-contact {
     margin-left: auto;
 }
 
-.topbar-item {
+.bottombar-item {
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -169,15 +176,15 @@ ul {
     font-weight: 500;
 }
 
-a.topbar-item {
+a.bottombar-item {
     transition: color var(--transition);
 }
 
-a.topbar-item:hover {
+a.bottombar-item:hover {
     color: var(--accent-light);
 }
 
-.topbar-item svg {
+.bottombar-item svg {
     stroke: var(--accent);
     flex-shrink: 0;
 }
@@ -186,18 +193,18 @@ a.topbar-item:hover {
    Navigation
    =========================== */
 .navbar {
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(15, 31, 54, 0.78);
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
-    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(15, 31, 54, 0.18);
     padding: 14px 0;
     transition: box-shadow var(--transition), padding var(--transition), background var(--transition);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.88);
-    box-shadow: var(--shadow-md);
+    background: rgba(15, 31, 54, 0.9);
+    box-shadow: 0 6px 28px rgba(15, 31, 54, 0.3);
     padding: 10px 0;
 }
 
@@ -227,9 +234,17 @@ a.topbar-item:hover {
     color: var(--primary);
 }
 
+.site-header .logo-text {
+    color: #ffffff;
+}
+
 .logo-accent {
     color: #a5761f;
     font-weight: 800;
+}
+
+.site-header .logo-accent {
+    color: var(--accent-light);
 }
 
 .nav-links {
@@ -248,12 +263,13 @@ a.topbar-item:hover {
     padding: 8px 2px;
 }
 
-.nav-links a:hover {
-    color: var(--primary);
+.site-header .nav-links a {
+    color: rgba(255, 255, 255, 0.88);
 }
 
-.nav-links a.active {
-    color: var(--primary);
+.site-header .nav-links a:hover,
+.site-header .nav-links a.active {
+    color: var(--accent-light);
 }
 
 .nav-links a::after {
@@ -274,17 +290,17 @@ a.topbar-item:hover {
 }
 
 .nav-cta {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
-    color: white !important;
+    background: linear-gradient(135deg, var(--accent-light), var(--accent)) !important;
+    color: var(--primary-dark) !important;
     padding: 11px 26px !important;
     border-radius: var(--radius-xl);
-    box-shadow: 0 8px 24px rgba(30, 58, 95, 0.28);
+    box-shadow: 0 8px 24px rgba(212, 168, 83, 0.32);
     transition: all var(--transition) !important;
 }
 
 .nav-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(30, 58, 95, 0.38);
+    box-shadow: 0 12px 32px rgba(212, 168, 83, 0.45);
 }
 
 .nav-cta::after {
@@ -296,10 +312,10 @@ a.topbar-item:hover {
     flex-direction: column;
     justify-content: center;
     gap: 5px;
-    background: var(--glass-bg);
+    background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
     padding: 12px;
     border-radius: var(--radius-sm);
@@ -311,7 +327,7 @@ a.topbar-item:hover {
 .mobile-menu-btn span {
     width: 22px;
     height: 2px;
-    background: var(--primary);
+    background: #ffffff;
     transition: all var(--transition);
     border-radius: 2px;
     margin: 0 auto;
@@ -338,7 +354,7 @@ a.topbar-item:hover {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 190px 0 90px;
+    padding: 130px 0 90px;
 }
 
 .hero-bg {
@@ -570,7 +586,7 @@ a.topbar-item:hover {
 
 .hero-scroll {
     position: absolute;
-    bottom: 28px;
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -693,14 +709,15 @@ a.topbar-item:hover {
     left: -40%;
     width: 80%;
     height: 130%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
-    transform: rotate(20deg);
-    transition: left 0.8s ease;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.38) 50%, transparent 100%);
+    transform: rotate(20deg) translateX(0);
+    transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
     pointer-events: none;
+    will-change: transform;
 }
 
 .service-card:hover::before {
-    left: 120%;
+    transform: rotate(20deg) translateX(300%);
 }
 
 .service-card:hover {
@@ -712,23 +729,26 @@ a.topbar-item:hover {
 /* Glow shine that also runs on touch devices (no hover) */
 @media (hover: none) {
     .service-card::before {
-        animation: cardShine 7s ease-in-out infinite;
+        animation: cardShine 9s cubic-bezier(0.45, 0, 0.55, 1) infinite;
     }
-    .service-card:nth-child(2)::before { animation-delay: 1s; }
-    .service-card:nth-child(3)::before { animation-delay: 2s; }
-    .service-card:nth-child(4)::before { animation-delay: 3s; }
-    .service-card:nth-child(5)::before { animation-delay: 4s; }
+    .service-card:nth-child(2)::before { animation-delay: 1.5s; }
+    .service-card:nth-child(3)::before { animation-delay: 3s; }
+    .service-card:nth-child(4)::before { animation-delay: 4.5s; }
+    .service-card:nth-child(5)::before { animation-delay: 6s; }
 }
 
 @keyframes cardShine {
-    0%, 58% { left: -40%; }
-    78% { left: 120%; }
-    100% { left: 120%; }
+    0%, 55% { transform: rotate(20deg) translateX(0); opacity: 0; }
+    68% { opacity: 1; }
+    92% { transform: rotate(20deg) translateX(300%); opacity: 1; }
+    100% { transform: rotate(20deg) translateX(300%); opacity: 0; }
 }
 
 /* Fallback for browsers without backdrop-filter */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    .navbar,
+    .navbar {
+        background-color: rgba(15, 31, 54, 0.97);
+    }
     .glass,
     .hero-badge,
     .hero-stats,
@@ -1686,7 +1706,7 @@ a.topbar-item:hover {
    =========================== */
 .whatsapp-float {
     position: fixed;
-    bottom: 26px;
+    bottom: 84px;
     right: 26px;
     left: auto;
     direction: ltr;
@@ -1792,17 +1812,20 @@ a.topbar-item:hover {
         align-items: center;
         font-size: 1.1rem;
         padding: 14px 12px;
-        color: var(--primary-dark);
         border-radius: var(--radius-md);
         transition: all var(--transition);
     }
 
-    .nav-links a:hover {
+    .site-header .nav-links a {
+        color: var(--primary-dark);
+    }
+
+    .site-header .nav-links a:hover {
         background: rgba(30, 58, 95, 0.07);
         color: var(--primary);
     }
 
-    .nav-links a::after {
+    .site-header .nav-links a::after {
         display: none;
     }
 
@@ -1817,12 +1840,12 @@ a.topbar-item:hover {
         display: flex;
     }
 
-    .topbar-inner {
+    .bottombar-inner {
         justify-content: center;
     }
 
-    .topbar-loc,
-    .topbar-contact {
+    .bottombar-loc,
+    .bottombar-contact {
         gap: 12px 20px;
     }
 
@@ -1842,7 +1865,11 @@ a.topbar-item:hover {
     }
 
     .hero {
-        padding: 210px 0 90px;
+        padding: 130px 0 90px;
+    }
+
+    .whatsapp-float {
+        bottom: 96px;
     }
 }
 
@@ -1851,22 +1878,28 @@ a.topbar-item:hover {
         padding: 0 20px;
     }
 
-    .topbar {
+    .bottombar {
         font-size: 0.75rem;
     }
 
-    .topbar-item {
+    .bottombar-item {
         white-space: normal;
         line-height: 1.4;
     }
 
-    .topbar-inner {
+    .bottombar-inner {
         gap: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 
-    .topbar-loc,
-    .topbar-contact {
+    .bottombar-loc,
+    .bottombar-contact {
         gap: 6px 16px;
+    }
+
+    body {
+        padding-bottom: 128px;
     }
 
     .navbar {
@@ -1874,7 +1907,7 @@ a.topbar-item:hover {
     }
 
     html {
-        scroll-padding-top: 200px;
+        scroll-padding-top: 100px;
     }
 
     .form-row {
@@ -1953,8 +1986,12 @@ a.topbar-item:hover {
     .whatsapp-float {
         width: 54px;
         height: 54px;
-        bottom: 20px;
+        bottom: 140px;
         right: 20px;
+    }
+
+    .hero-scroll {
+        bottom: 150px;
     }
 
     .footer-credit p {

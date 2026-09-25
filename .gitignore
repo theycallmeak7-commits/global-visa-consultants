@@ -1,0 +1,7 @@
+# Local reference material only - never publish to the live site
+inspiration/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log

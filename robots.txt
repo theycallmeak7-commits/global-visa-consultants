@@ -1,0 +1,5 @@
+# https://makresidency.com
+User-agent: *
+Allow: /
+
+Sitemap: https://makresidency.com/sitemap.xml

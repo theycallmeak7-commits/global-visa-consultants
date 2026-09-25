@@ -1633,6 +1633,25 @@ html:not(.js) .accordion-icon { display: none; }
 
 .footer-credit a:hover { color: var(--gold); }
 
+.footer-legal {
+    margin: 22px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-dark-soft);
+    font-size: 12px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.46);
+    max-width: 88ch;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.62);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    transition: color 0.25s var(--ease);
+}
+
+.footer-legal a:hover { color: var(--gold); }
+
 
 /* ==========================================================================
    18. FLOATING ACTIONS & DOCK
@@ -2134,3 +2153,540 @@ body.is-locked .whatsapp-float {
 
     .nav-toggle-text { display: none; }
 }
+
+/* ==========================================================================
+   Program & article pages
+   Detail pages: /program-slug/ and /legal-slug/
+   Appended last so these rules win on equal specificity.
+   Reuses the existing token set so contrast stays as validated.
+   ========================================================================== */
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumbs {
+    background: var(--band);
+    border-bottom: 1px solid var(--border);
+}
+.breadcrumbs-inner {
+    padding: 12px 0;
+    font-size: 13px;
+    color: var(--muted);
+}
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.breadcrumbs li + li::before {
+    content: "/";
+    color: var(--rule);
+}
+.breadcrumbs a {
+    color: var(--body);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+}
+.breadcrumbs a:hover { color: var(--navy-800); border-bottom-color: var(--navy-800); }
+.breadcrumbs [aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+/* ---------- Page hero ---------- */
+.page-hero {
+    background: var(--navy-800);
+    color: #fff;
+    padding: 56px 0 52px;
+    position: relative;
+    overflow: hidden;
+}
+.page-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 40%, transparent 100%);
+}
+.page-hero .eyebrow { color: var(--gold-soft); }
+.page-hero .eyebrow-rule { background: var(--gold-soft); }
+.page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.6vw, 3.1rem);
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 14px 0 0;
+    max-width: 22ch;
+}
+.page-title--wide { max-width: 30ch; }
+.page-lede {
+    font-size: clamp(1rem, 1.9vw, 1.15rem);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 62ch;
+    margin: 18px 0 0;
+}
+.page-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+    margin-top: 26px;
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.62);
+}
+.page-meta > * { display: flex; align-items: center; gap: 6px; }
+.page-meta .dot { color: var(--line-dark); }
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid var(--line-dark);
+    border-radius: 999px;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+}
+.page-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+/* ---------- Key figures ---------- */
+.keyfacts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.keyfacts > li {
+    background: var(--white);
+    padding: 20px 20px 22px;
+}
+.keyfacts .kf-label {
+    display: block;
+    font-size: 11.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+.keyfacts .kf-value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--navy-800);
+}
+.keyfacts .kf-note {
+    display: block;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+/* ---------- Prose ---------- */
+.prose {
+    max-width: 74ch;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--body);
+}
+.prose > * + * { margin-top: 18px; }
+.prose h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.8vw, 1.95rem);
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 52px;
+    margin-bottom: 4px;
+    scroll-margin-top: calc(var(--header-h) + 24px);
+}
+.prose h3 {
+    font-family: var(--font-body);
+    font-size: 1.075rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 32px;
+    margin-bottom: 2px;
+}
+.prose h2 + p,
+.prose h3 + p { margin-top: 8px; }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose a {
+    color: var(--navy-700);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--rule);
+}
+.prose a:hover { text-decoration-color: var(--navy-700); }
+.prose ul,
+.prose ol { padding-left: 22px; }
+.prose li + li { margin-top: 8px; }
+.prose li::marker { color: var(--gold-ink); }
+.prose > p:first-of-type {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--ink);
+}
+.prose-section { padding: 40px 0; }
+.prose-section + .prose-section { padding-top: 8px; }
+
+/* ---------- Data table ---------- */
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+.datatable {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+}
+.datatable caption {
+    caption-side: top;
+    text-align: left;
+    padding: 16px 18px 12px;
+    font-size: 13px;
+    color: var(--muted);
+    background: var(--band);
+    border-bottom: 1px solid var(--border);
+}
+.datatable th,
+.datatable td {
+    text-align: left;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.55;
+}
+.datatable thead th {
+    background: var(--navy-800);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.datatable tbody tr:last-child th,
+.datatable tbody tr:last-child td { border-bottom: 0; }
+.datatable tbody th {
+    font-weight: 600;
+    color: var(--ink);
+}
+.datatable td { color: var(--body); }
+.datatable tbody tr:nth-child(even) { background: var(--band); }
+.datatable .num {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+.datatable .fx {
+    display: block;
+    font-size: 12.5px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+.table-note {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+/* ---------- Checklist ---------- */
+.checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+.checklist li {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--body);
+    padding: 14px 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+}
+.checklist .tick {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(200, 155, 60, 0.14);
+    color: var(--gold-ink);
+    display: grid;
+    place-items: center;
+    flex: none;
+}
+.checklist .tick svg { width: 13px; height: 13px; }
+
+/* ---------- Numbered steps ---------- */
+.steps {
+    list-style: none;
+    counter-reset: step;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+    border-left: 1px solid var(--border);
+}
+.steps > li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 28px 34px;
+}
+.steps > li:last-child { padding-bottom: 0; }
+.steps > li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: -19px;
+    top: 0;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: var(--navy-800);
+    color: var(--gold-soft);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px var(--white);
+}
+.steps h3 { margin: 4px 0 4px; font-size: 1.075rem; }
+.steps p { font-size: 0.9375rem; line-height: 1.65; color: var(--body); margin: 0; }
+
+/* ---------- Callouts ---------- */
+.callout {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    background: var(--band);
+    padding: 20px 22px;
+    border-radius: var(--r-md);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--body);
+}
+.callout > * + * { margin-top: 10px; }
+.callout strong { color: var(--ink); }
+.callout--plain {
+    background: var(--white);
+    border-left-color: var(--rule);
+}
+
+/* ---------- Source links ---------- */
+.sources {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+.sources li {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    padding-left: 26px;
+    position: relative;
+    color: var(--body);
+}
+.sources li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 12px;
+    height: 8px;
+    border-left: 2px solid var(--gold-ink);
+    border-bottom: 2px solid var(--gold-ink);
+    transform: rotate(-45deg);
+}
+.sources a { color: var(--navy-700); }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+    background: var(--navy-800);
+    color: #fff;
+    border-radius: var(--r-lg);
+    padding: 40px 44px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 28px;
+    align-items: center;
+    box-shadow: var(--shadow-md);
+}
+.cta-band h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.7vw, 2rem);
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+.cta-band p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    max-width: 56ch;
+}
+.cta-band-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.cta-band .btn-ghost { border-color: var(--line-dark); color: #fff; }
+.cta-band .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.4); }
+
+/* ---------- Sibling programme links ---------- */
+.related {
+    border-top: 1px solid var(--border);
+    padding: 34px 0 46px;
+}
+.related h2 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 18px;
+}
+.related-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+.related-grid a {
+    display: block;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    background: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--ink);
+    transition: border-color 0.18s var(--ease), transform 0.18s var(--ease);
+}
+.related-grid a:hover { border-color: var(--gold); transform: translateY(-1px); }
+.related-grid span {
+    display: block;
+    font-weight: 400;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+/* ---------- Sidebar (contents) ---------- */
+.detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 250px;
+    gap: 56px;
+    align-items: start;
+    padding: 48px 0 0;
+}
+.toc {
+    position: sticky;
+    top: calc(var(--header-h) + 20px);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 18px 20px 20px;
+    background: var(--band);
+    font-size: 0.875rem;
+}
+.toc h2 {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+}
+.toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.toc li { counter-increment: toc; }
+.toc a {
+    display: block;
+    padding: 6px 0 6px 22px;
+    color: var(--body);
+    text-decoration: none;
+    position: relative;
+    line-height: 1.45;
+}
+.toc a::before {
+    content: counter(toc) ".";
+    position: absolute;
+    left: 0;
+    color: var(--gold-ink);
+    font-variant-numeric: tabular-nums;
+}
+.toc a:hover { color: var(--navy-800); }
+.toc .toc-rule { height: 1px; background: var(--border); margin: 12px 0; }
+.toc .toc-cta { padding: 0; }
+
+/* ---------- Legal / short pages ---------- */
+.legal-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .detail-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .toc { display: none; }
+    .keyfacts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+    .page-hero { padding: 42px 0 40px; }
+    .cta-band {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 32px 26px;
+        gap: 22px;
+    }
+    .cta-band-actions { width: 100%; }
+    .cta-band-actions .btn { flex: 1 1 auto; justify-content: center; }
+    .related-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+    .keyfacts { grid-template-columns: minmax(0, 1fr); }
+    .keyfacts > li { padding: 16px 18px; }
+    .prose { font-size: 1rem; }
+    .prose > p:first-of-type { font-size: 1.0625rem; }
+    .prose h2 { margin-top: 42px; }
+    .datatable th, .datatable td { padding: 11px 14px; }
+    .steps > li { padding-left: 30px; }
+    .steps > li::before { width: 32px; height: 32px; font-size: 11px; left: -16px; }
+}
+

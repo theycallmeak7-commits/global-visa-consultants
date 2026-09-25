@@ -274,6 +274,23 @@
 
 
     /* ------------------------------------------------------------------
+       Landing on a page with a hash already in the URL
+       Detail pages link back to "/index.html#section", so the browser
+       restores the scroll position but not the offset the fixed header
+       needs. Re-run the in-page scroll once the page has settled.
+       ------------------------------------------------------------------ */
+    (function syncInitialHash() {
+        var initial = window.location.hash;
+        if (!initial || initial === '#') return;
+        if (!document.querySelector(initial)) return;
+
+        var jump = function () { scrollToHash(initial); };
+        window.setTimeout(jump, 120);
+        window.addEventListener('load', jump, { once: true });
+    })();
+
+
+    /* ------------------------------------------------------------------
        Enquiry form -> WhatsApp
        ------------------------------------------------------------------ */
     var form = document.getElementById('contactForm');

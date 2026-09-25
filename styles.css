@@ -2121,7 +2121,16 @@ body.is-locked .whatsapp-float {
 
     .region-list { grid-template-columns: minmax(0, 1fr); }
 
-    .brand-sub { display: none; }
+    /* Keep the descriptor visible on narrow phones: cap its width so it wraps
+       to two lines instead of being dropped or forcing header overflow */
+    .brand-sub {
+        display: block;
+        max-width: 176px;
+        font-size: 8px;
+        line-height: 1.3;
+        letter-spacing: 0.1em;
+        white-space: normal;
+    }
 
     .nav-toggle-text { display: none; }
 }

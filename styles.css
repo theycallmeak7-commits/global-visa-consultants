@@ -1176,6 +1176,16 @@ ol, ul { padding: 0; list-style: none; }
 
 .accordion-trigger:hover { color: var(--navy-700); }
 
+/* Triggers without the numbered column get a two-track grid, otherwise the label
+   falls into the 40px number track and wraps one word per line */
+.accordion-item--plain .accordion-trigger {
+    grid-template-columns: minmax(0, 1fr) 20px;
+}
+
+.accordion-item--plain .accordion-panel {
+    padding-left: 0;
+}
+
 .accordion-num {
     display: flex;
     align-items: center;

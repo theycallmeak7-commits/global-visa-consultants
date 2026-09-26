@@ -1944,6 +1944,27 @@ body.is-locked .whatsapp-float {
     .brand-sub { display: none; }
 }
 
+/* ---- 1441px to 1919px: partial tightening ----
+   The full-size row needs about 1762px (brand 569 + gap 32 + nav 1097 +
+   gutters 64) and only clears the viewport edge at 1800px, which leaves
+   2px of margin. Between 1441px and 1919px the base nav-list cannot sit
+   beside the tagline without spilling into the gutter, so step the nav down
+   and drop the tagline. The full-size row is kept for 1920px and up, where
+   it has 62px of margin inside the container. */
+@media (min-width: 1441px) and (max-width: 1919px) {
+    .brand-mark { width: 34px; }
+
+    .brand-name { font-size: 19px; }
+
+    .brand-sub { display: none; }
+
+    .nav-list { gap: 18px; }
+
+    .nav-list a { font-size: 10.5px; letter-spacing: 0.08em; }
+
+    .nav-list .nav-cta { padding: 11px 14px; }
+}
+
 /* ---- <= 1280px: switch to the panel navigation ---- */
 @media (max-width: 1280px) {
     .nav-toggle { display: inline-flex; }
@@ -2151,6 +2172,24 @@ body.is-locked .whatsapp-float {
     }
 }
 
+/* ---- <= 520px: protect the header row ----
+   The brand cannot shrink (flex: none) and the tagline is wider than the
+   viewport on its own, so between roughly 401px and 470px the brand plus the
+   labelled "Menu" toggle overran the container. Cap the tagline to two lines
+   and drop the button label across the whole small-phone band. */
+@media (max-width: 520px) {
+    .brand-sub {
+        display: block;
+        max-width: 176px;
+        font-size: 8px;
+        line-height: 1.3;
+        letter-spacing: 0.1em;
+        white-space: normal;
+    }
+
+    .nav-toggle-text { display: none; }
+}
+
 /* ---- <= 400px ---- */
 @media (max-width: 400px) {
     :root { --gutter: 16px; }
@@ -2163,19 +2202,6 @@ body.is-locked .whatsapp-float {
     }
 
     .region-list { grid-template-columns: minmax(0, 1fr); }
-
-    /* Keep the descriptor visible on narrow phones: cap its width so it wraps
-       to two lines instead of being dropped or forcing header overflow */
-    .brand-sub {
-        display: block;
-        max-width: 176px;
-        font-size: 8px;
-        line-height: 1.3;
-        letter-spacing: 0.1em;
-        white-space: normal;
-    }
-
-    .nav-toggle-text { display: none; }
 }
 
 /* ==========================================================================

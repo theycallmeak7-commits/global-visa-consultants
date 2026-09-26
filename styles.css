@@ -1923,10 +1923,29 @@ body.is-locked .whatsapp-float {
     .office-card { margin-top: 0; padding-top: 0; border-top: 0; }
 }
 
-/* ---- <= 900px: switch to mobile navigation ---- */
-@media (max-width: 900px) {
-    :root { --header-h: 68px; }
+/* ---- <= 1440px: keep the primary nav on one line without overflowing ---- */
+@media (max-width: 1440px) {
+    .brand-mark { width: 32px; }
 
+    .brand-name { font-size: 19px; }
+
+    .brand-sub { font-size: 8px; letter-spacing: 0.13em; }
+
+    .nav-list { gap: 16px; }
+
+    .nav-list a { font-size: 10px; letter-spacing: 0.06em; }
+
+    .nav-list .nav-cta { padding: 10px 12px; }
+}
+
+/* The brand tagline is the widest fixed block in the header; drop it in the
+   band where the nav is still inline, so the row cannot overflow. */
+@media (min-width: 1281px) and (max-width: 1440px) {
+    .brand-sub { display: none; }
+}
+
+/* ---- <= 1280px: switch to the panel navigation ---- */
+@media (max-width: 1280px) {
     .nav-toggle { display: inline-flex; }
 
     .primary-nav {
@@ -1981,6 +2000,11 @@ body.is-locked .whatsapp-float {
     }
 
     .nav-list .nav-cta:hover { background: var(--gold); color: var(--navy-900); }
+}
+
+/* ---- <= 900px: mobile layout ---- */
+@media (max-width: 900px) {
+    :root { --header-h: 68px; }
 
     .hero {
         min-height: 0;

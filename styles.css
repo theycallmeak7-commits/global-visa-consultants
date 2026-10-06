@@ -1524,6 +1524,10 @@ html:not(.js) .accordion-icon { display: none; }
     color: rgba(255, 255, 255, 0.68);
 }
 
+.office-address--second {
+    margin-top: 18px;
+}
+
 
 /* ==========================================================================
    17. FOOTER
@@ -1717,11 +1721,22 @@ html:not(.js) .accordion-icon { display: none; }
 
 .dock-panel-label {
     margin: 0;
+    flex: 0 0 100%;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
+}
+
+/* Each office keeps its address and map link together when the panel wraps */
+.dock-panel-office {
+    display: flex;
+    flex: 1 1 300px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 16px;
+    min-width: 0;
 }
 
 .dock-panel-address {

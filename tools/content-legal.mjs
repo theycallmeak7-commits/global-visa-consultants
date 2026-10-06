@@ -96,7 +96,7 @@ export const LEGAL = [
                 id: 'who',
                 h: 'Who is responsible',
                 p: [
-                    'MAK RESIDENCY is the controller of the personal information described in this policy. We are reachable at <a href="mailto:contact@makresidency.com">contact@makresidency.com</a> and by post at Rua Ant&oacute;nio Concei&ccedil;&atilde;o Bento 6D, 3D, Peniche, Portugal.',
+                    'MAK RESIDENCY is the controller of the personal information described in this policy. We are reachable at <a href="mailto:contact@makresidency.com">contact@makresidency.com</a> and by post at Nucleus Furnished Offices, Fakhri Trade Centre (FTC), 8A Floor, SR-6/10, Shahrah-e-Liaquat (Frere Road), New Chali, Karachi 74200, Sindh, Pakistan, and at Rua Ant&oacute;nio Concei&ccedil;&atilde;o Bento 6D, 3D, Peniche, Portugal.',
                     'This policy covers this website. It does not cover government application systems, which are operated by the relevant authority and governed by that authority&rsquo;s own privacy policy.'
                 ]
             },

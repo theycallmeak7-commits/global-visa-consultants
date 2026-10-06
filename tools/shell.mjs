@@ -93,7 +93,7 @@ function header(p) {
                 <a class="utility-link" href="mailto:contact@makresidency.com">${svg(ICON.mail)}<span>contact@makresidency.com</span></a>
             </div>
             <div class="utility-group utility-group--end">
-                <span class="utility-note">Office: Peniche, Portugal</span>
+                <span class="utility-note">Offices: Karachi, Pakistan &middot; Peniche, Portugal</span>
                 <a class="utility-link" href="https://www.instagram.com/makresidency12/" target="_blank" rel="noopener noreferrer me">${svg(ICON.instagram)}<span>Instagram</span></a>
             </div>
         </div>
@@ -171,7 +171,14 @@ function footer(p) {
             </nav>
 
             <div class="footer-col">
-                <h2 class="footer-heading">Office</h2>
+                <h2 class="footer-heading">Offices</h2>
+                <address class="footer-address">
+                    Nucleus Furnished Offices<br>
+                    Fakhri Trade Centre (FTC)<br>
+                    8A Floor, SR-6/10, Shahrah-e-Liaquat (Frere Road)<br>
+                    New Chali, Karachi &ndash; 74200<br>
+                    Sindh, Pakistan
+                </address>
                 <address class="footer-address">
                     Rua Ant&oacute;nio Concei&ccedil;&atilde;o Bento 6D, 3D<br>
                     Peniche, Portugal
@@ -200,14 +207,20 @@ function footer(p) {
 <div class="dock" id="dock">
     <div class="dock-panel" id="dockPanel">
         <div class="container dock-panel-inner">
-            <p class="dock-panel-label">Our office</p>
-            <address class="dock-panel-address">Rua Ant&oacute;nio Concei&ccedil;&atilde;o Bento 6D, 3D, Peniche, Portugal</address>
-            <a class="dock-panel-map" href="https://maps.google.com/?q=Rua+Ant%C3%B3nio+Concei%C3%A7%C3%A3o+Bento+6D+Peniche+Portugal" target="_blank" rel="noopener noreferrer">View on map</a>
+            <p class="dock-panel-label">Our offices</p>
+            <div class="dock-panel-office">
+                <address class="dock-panel-address">Nucleus Furnished Offices, Fakhri Trade Centre (FTC), 8A Floor, SR-6/10, Shahrah-e-Liaquat (Frere Road), New Chali, Karachi &ndash; 74200, Sindh, Pakistan</address>
+                <a class="dock-panel-map" href="https://maps.google.com/?q=Nucleus+Furnished+Offices+Fakhri+Trade+Centre+Shahrah-e-Liaquat+New+Chali+Karachi+74200" target="_blank" rel="noopener noreferrer">View on map</a>
+            </div>
+            <div class="dock-panel-office">
+                <address class="dock-panel-address">Rua Ant&oacute;nio Concei&ccedil;&atilde;o Bento 6D, 3D, Peniche, Portugal</address>
+                <a class="dock-panel-map" href="https://maps.google.com/?q=Rua+Ant%C3%B3nio+Concei%C3%A7%C3%A3o+Bento+6D+Peniche+Portugal" target="_blank" rel="noopener noreferrer">View on map</a>
+            </div>
         </div>
     </div>
     <div class="dock-bar">
         <div class="container dock-inner">
-            <span class="dock-office">${svg(ICON.pin)}<span>Rua Ant&oacute;nio Concei&ccedil;&atilde;o Bento 6D, 3D, Peniche, Portugal</span></span>
+            <span class="dock-office">${svg(ICON.pin)}<span>Karachi, Pakistan &middot; Peniche, Portugal</span></span>
             <span class="dock-actions">
                 <a class="dock-link" href="tel:+923268653443">${svg(ICON.phone)}<span>Call</span></a>
                 <a class="dock-link" href="mailto:contact@makresidency.com">${svg(ICON.mail)}<span>Email</span></a>
@@ -344,14 +357,25 @@ const ORG = {
     image: { '@type': 'ImageObject', url: `${SITE}/assets/og-image.png`, width: 1200, height: 630 },
     telephone: '+92-326-8653443',
     email: 'contact@makresidency.com',
-    address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Rua Antonio Conceicao Bento 6D, 3D',
-        addressLocality: 'Peniche',
-        addressRegion: 'Leiria',
-        postalCode: '2560-392',
-        addressCountry: 'PT'
-    },
+    location: [
+        {
+            '@type': 'PostalAddress',
+            name: 'Nucleus Furnished Offices',
+            streetAddress: 'Fakhri Trade Centre (FTC), 8A Floor, SR-6/10, Shahrah-e-Liaquat (Frere Road), New Chali',
+            addressLocality: 'Karachi',
+            addressRegion: 'Sindh',
+            postalCode: '74200',
+            addressCountry: 'PK'
+        },
+        {
+            '@type': 'PostalAddress',
+            streetAddress: 'Rua Antonio Conceicao Bento 6D, 3D',
+            addressLocality: 'Peniche',
+            addressRegion: 'Leiria',
+            postalCode: '2560-392',
+            addressCountry: 'PT'
+        }
+    ],
     areaServed: [
         { '@type': 'Country', name: 'United Arab Emirates' },
         { '@type': 'Country', name: 'Saudi Arabia' },

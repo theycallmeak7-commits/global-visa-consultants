@@ -73,6 +73,7 @@ const BRAND_TEXT = `<span class="brand-text">
 const ICON = {
     phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
     mail: '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>',
+    linkedin: '<rect x="3" y="3" width="4" height="4"/><line x1="3" y1="10" x2="3" y2="21"/><path d="M10 8.5c2.2 0 3.8 1.7 3.8 3.8v8.7h-4V13c0-1-.8-1.8-1.8-1.8S6.2 12 6.2 13v8h-4V8.5h4z"/><rect width="20" height="20" x="2" y="2" rx="2"/>',
     instagram: '<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8a4 4 0 0 1 3.4 3.4z"/><path d="M17.5 6.5h.01"/>',
     pin: '<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.6"/>',
     facebook: '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'
@@ -94,7 +95,7 @@ function header(p) {
             </div>
             <div class="utility-group utility-group--end">
                 <span class="utility-note">Offices: Karachi, Pakistan &middot; Peniche, Portugal</span>
-                <a class="utility-link" href="https://www.instagram.com/makresidency12/" target="_blank" rel="noopener noreferrer me">${svg(ICON.instagram)}<span>Instagram</span></a>
+                <a class="utility-link" href="https://www.linkedin.com/company/mak-residency/" target="_blank" rel="noopener noreferrer me">${svg(ICON.linkedin)}<span>LinkedIn</span></a>
             </div>
         </div>
     </div>
@@ -142,7 +143,8 @@ function footer(p) {
                 <p class="footer-blurb">Your trusted partner in global immigration. Making international mobility accessible, transparent, and successful.</p>
                 <ul class="footer-social">
                     <li>
-                        <a href="https://www.instagram.com/makresidency12/" target="_blank" rel="noopener noreferrer me" aria-label="Instagram">${svg(ICON.instagram)}</a>
+                        <a href="https://www.linkedin.com/company/mak-residency/" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn">${svg(ICON.linkedin)}</a>
+    <a href="https://www.instagram.com/makresidency12/" target="_blank" rel="noopener noreferrer me" aria-label="Instagram">${svg(ICON.instagram)}</a>
                     </li>
                     <li>
                         <a href="https://www.facebook.com/share/1LLcSivwy2/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">${svg(ICON.facebook)}</a>
@@ -192,7 +194,7 @@ function footer(p) {
 
         <div class="footer-bottom">
             <p class="copyright">&copy; 2026 MAK RESIDENCY. All rights reserved.</p>
-                <p class="footer-credit">Crafted with <span aria-hidden="true">&#10084;</span> by <strong>Adeel Khan</strong> &middot; <a href="tel:+923038466827">+92 303 846 6827</a></p>
+                <p class="footer-credit">Crafted with <span aria-hidden="true">&#10084;</span> by <strong>Adeel Khan</strong> &middot; <a href="tel:+923284625685">+92 328 4625685</a></p>
         </div>
 
         <p class="footer-legal">MAK RESIDENCY publishes general information about immigration and residency routes, not individual legal advice. We are not regulated by the UK Immigration Advice Authority, and no immigration outcome is guaranteed. Fees and requirements change, so check the official source before you act. Read our <a href="${p ? p : ''}disclaimer/">disclaimer</a> and <a href="${p ? p : ''}terms/">terms</a>.</p>
@@ -391,7 +393,7 @@ const ORG = {
         { '@type': 'AdministrativeArea', name: 'Americas' }
     ],
     knowsLanguage: ['en', 'ur', 'pa', 'hi', 'ar'],
-    sameAs: ['https://www.instagram.com/makresidency12/'],
+        sameAs: ['https://www.linkedin.com/company/mak-residency/', 'https://www.instagram.com/makresidency12/'],
     contactPoint: [
         {
             '@type': 'ContactPoint',
@@ -489,7 +491,7 @@ function writePage({ slug, title, description, eyebrow, h1, lede, meta, facts, t
     <link rel="stylesheet" href="${p}styles.css">
     <link rel="icon" type="image/svg+xml" href="${p}favicon.svg">
     <link rel="apple-touch-icon" href="${p}assets/apple-touch-icon.png">
-    <link rel="me" href="https://www.instagram.com/makresidency12/">
+    <link rel="me" href="https://www.linkedin.com/company/mak-residency/">
 
     ${jsonLdBlock(jsonLd)}
 

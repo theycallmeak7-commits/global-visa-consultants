@@ -60,7 +60,7 @@ function writeLegalPage(page) {
     <meta property="og:image" content="${SITE}/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="MAK RESIDENCY - global immigration and residency consultants">
+    <meta property="og:image:alt" content="MAK RESIDENCY - Global Residency &amp; Citizenship Consultants">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${page.title}">
     <meta name="twitter:description" content="${page.description}">
@@ -72,7 +72,7 @@ function writeLegalPage(page) {
     <link rel="stylesheet" href="${P}styles.css">
     <link rel="icon" type="image/svg+xml" href="${P}favicon.svg">
     <link rel="apple-touch-icon" href="${P}assets/apple-touch-icon.png">
-    <link rel="me" href="https://www.instagram.com/makresidency12/">
+    <link rel="me" href="https://www.instagram.com/Residency.mak">
 
     ${jsonLdBlock([
         {

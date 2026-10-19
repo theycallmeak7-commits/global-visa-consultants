@@ -1,6 +1,6 @@
 /* ==========================================================================
    MAK RESIDENCY
-   Global Immigration & Residency Consultants
+   Global Residency & Citizenship Consultants
    Vanilla JS, no dependencies.
    ========================================================================== */
 (function () {
@@ -296,7 +296,7 @@
     var form = document.getElementById('contactForm');
 
     if (form) {
-        var WHATSAPP_NUMBER = '923268653443';
+        var WHATSAPP_NUMBER = '923219213538';
         var errorBox = document.getElementById('formError');
         var submitBtn = document.getElementById('submitBtn');
         var btnLabel = submitBtn ? submitBtn.querySelector('.btn-label') : null;

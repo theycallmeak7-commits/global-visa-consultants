@@ -67,7 +67,7 @@ const BRAND_MARK = `<span class="brand-mark" aria-hidden="true">
 
 const BRAND_TEXT = `<span class="brand-text">
                         <span class="brand-name">MAK RESIDENCY</span>
-                        <span class="brand-sub">Global Immigration &amp; Residency Consultants</span>
+                        <span class="brand-sub">Global Residency &amp; Citizenship Consultants</span>
                     </span>`;
 
 const ICON = {
@@ -90,7 +90,7 @@ function header(p) {
     <div class="utility-bar">
         <div class="container utility-inner">
             <div class="utility-group">
-                <a class="utility-link" href="tel:+923268653443">${svg(ICON.phone)}<span>+92 326 8653443</span></a>
+                <a class="utility-link" href="tel:+923219213538">${svg(ICON.phone)}<span>+92 321 9213538</span></a>
                 <a class="utility-link" href="mailto:contact@makresidency.com">${svg(ICON.mail)}<span>contact@makresidency.com</span></a>
             </div>
             <div class="utility-group utility-group--end">
@@ -140,14 +140,16 @@ function footer(p) {
                     ${BRAND_MARK}
                     ${BRAND_TEXT}
                 </a>
-                <p class="footer-blurb">Your trusted partner in global immigration. Making international mobility accessible, transparent, and successful.</p>
+                <p class="footer-blurb">Your trusted partner in global residency and citizenship. Making international mobility accessible, transparent, and successful.</p>
                 <ul class="footer-social">
                     <li>
                         <a href="https://www.linkedin.com/company/mak-residency/" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn">${svg(ICON.linkedin)}</a>
-    <a href="https://www.instagram.com/makresidency12/" target="_blank" rel="noopener noreferrer me" aria-label="Instagram">${svg(ICON.instagram)}</a>
                     </li>
                     <li>
-                        <a href="https://www.facebook.com/share/1LLcSivwy2/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">${svg(ICON.facebook)}</a>
+                        <a href="https://www.instagram.com/Residency.mak" target="_blank" rel="noopener noreferrer me" aria-label="Instagram">${svg(ICON.instagram)}</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61595228504606" target="_blank" rel="noopener noreferrer" aria-label="Facebook">${svg(ICON.facebook)}</a>
                     </li>
                 </ul>
             </div>
@@ -175,18 +177,14 @@ function footer(p) {
             <div class="footer-col">
                 <h2 class="footer-heading">Offices</h2>
                 <address class="footer-address">
-                    Nucleus Furnished Offices<br>
-                    Fakhri Trade Centre (FTC)<br>
-                    8A Floor, SR-6/10, Shahrah-e-Liaquat (Frere Road)<br>
-                    New Chali, Karachi &ndash; 74200<br>
-                    Sindh, Pakistan
+                    14 Floor, BRR Tower, II Chundrigar Road, Karachi
                 </address>
                 <address class="footer-address">
                     Rua Ant&oacute;nio Concei&ccedil;&atilde;o Bento 6D, 3D<br>
                     Peniche, Portugal
                 </address>
                 <ul class="footer-contact">
-                    <li><a href="tel:+923268653443">+92 326 8653443</a></li>
+                    <li><a href="tel:+923219213538">+92 321 9213538</a></li>
                     <li><a href="mailto:contact@makresidency.com">contact@makresidency.com</a></li>
                 </ul>
             </div>
@@ -202,7 +200,7 @@ function footer(p) {
 </footer>
 
 <!-- ========================= Floating actions ========================= -->
-<a class="whatsapp-float" href="https://wa.me/923268653443" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+<a class="whatsapp-float" href="https://wa.me/923219213538" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.5-.4zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 0 1 7 3.9z"/></svg>
 </a>
 
@@ -211,8 +209,8 @@ function footer(p) {
         <div class="container dock-panel-inner">
             <p class="dock-panel-label">Our offices</p>
             <div class="dock-panel-office">
-                <address class="dock-panel-address">Nucleus Furnished Offices, Fakhri Trade Centre (FTC), 8A Floor, SR-6/10, Shahrah-e-Liaquat (Frere Road), New Chali, Karachi &ndash; 74200, Sindh, Pakistan</address>
-                <a class="dock-panel-map" href="https://maps.google.com/?q=Nucleus+Furnished+Offices+Fakhri+Trade+Centre+Shahrah-e-Liaquat+New+Chali+Karachi+74200" target="_blank" rel="noopener noreferrer">View on map</a>
+                <address class="dock-panel-address">14 Floor, BRR Tower, II Chundrigar Road, Karachi</address>
+                <a class="dock-panel-map" href="https://maps.google.com/?q=14+Floor+BRR+Tower+II+Chundrigar+Road+Karachi" target="_blank" rel="noopener noreferrer">View on map</a>
             </div>
             <div class="dock-panel-office">
                 <address class="dock-panel-address">Rua Ant&oacute;nio Concei&ccedil;&atilde;o Bento 6D, 3D, Peniche, Portugal</address>
@@ -224,7 +222,7 @@ function footer(p) {
         <div class="container dock-inner">
             <span class="dock-office">${svg(ICON.pin)}<span>Karachi, Pakistan &middot; Peniche, Portugal</span></span>
             <span class="dock-actions">
-                <a class="dock-link" href="tel:+923268653443">${svg(ICON.phone)}<span>Call</span></a>
+                <a class="dock-link" href="tel:+923219213538">${svg(ICON.phone)}<span>Call</span></a>
                 <a class="dock-link" href="mailto:contact@makresidency.com">${svg(ICON.mail)}<span>Email</span></a>
                 <button class="dock-toggle" id="dockToggle" type="button" aria-expanded="false" aria-controls="dockPanel">${svg(ICON.pin)}<span>Office</span></button>
             </span>
@@ -294,7 +292,7 @@ const ctaBand = (heading, body) => `<section class="section">
             </div>
             <div class="cta-band-actions">
                 <a class="btn btn-primary" href="../index.html#contact">Request a consultation</a>
-                <a class="btn btn-ghost" href="https://wa.me/923268653443" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
+                <a class="btn btn-ghost" href="https://wa.me/923219213538" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
             </div>
         </div>
     </div>
@@ -349,26 +347,24 @@ const ORG = {
     '@type': ['Organization', 'ProfessionalService'],
     '@id': ORG_ID,
     name: 'MAK RESIDENCY',
-    alternateName: 'MAK Residency Global Immigration and Residency Consultants',
+    alternateName: 'MAK Residency Global Residency & Citizenship Consultants',
     url: `${SITE}/`,
     description:
-        'Immigration and residency consultancy with 15 years of experience advising business owners, skilled professionals, founders and investors on UK, US and Portuguese immigration routes.',
-    slogan: 'Global Immigration & Residency Consultants',
+        'MAK RESIDENCY is a consultancy providing expert guidance on global residency and citizenship pathways, including UK, US and Portuguese routes for business owners, skilled professionals, founders and investors.',
+    slogan: 'Global Residency & Citizenship Consultants',
     foundingDate: '2011',
     logo: { '@type': 'ImageObject', url: `${SITE}/favicon.svg` },
     image: { '@type': 'ImageObject', url: `${SITE}/assets/og-image.png`, width: 1200, height: 630 },
-    telephone: '+92-326-8653443',
+    telephone: '+92-321-9213538',
     email: 'contact@makresidency.com',
     location: [
-        {
-            '@type': 'PostalAddress',
-            name: 'Nucleus Furnished Offices',
-            streetAddress: 'Fakhri Trade Centre (FTC), 8A Floor, SR-6/10, Shahrah-e-Liaquat (Frere Road), New Chali',
-            addressLocality: 'Karachi',
-            addressRegion: 'Sindh',
-            postalCode: '74200',
-            addressCountry: 'PK'
-        },
+            {
+                '@type': 'PostalAddress',
+                streetAddress: '14 Floor, BRR Tower, II Chundrigar Road',
+                addressLocality: 'Karachi',
+                addressRegion: 'Sindh',
+                addressCountry: 'PK'
+            },
         {
             '@type': 'PostalAddress',
             streetAddress: 'Rua Antonio Conceicao Bento 6D, 3D',
@@ -393,12 +389,12 @@ const ORG = {
         { '@type': 'AdministrativeArea', name: 'Americas' }
     ],
     knowsLanguage: ['en', 'ur', 'pa', 'hi', 'ar'],
-        sameAs: ['https://www.linkedin.com/company/mak-residency/', 'https://www.instagram.com/makresidency12/'],
+        sameAs: ['https://www.linkedin.com/company/mak-residency/', 'https://www.instagram.com/Residency.mak', 'https://www.facebook.com/profile.php?id=61595228504606'],
     contactPoint: [
         {
             '@type': 'ContactPoint',
             contactType: 'Enquiries',
-            telephone: '+92-326-8653443',
+    telephone: '+92-321-9213538',
             email: 'contact@makresidency.com',
             availableLanguage: ['en', 'ur', 'pa', 'hi', 'ar'],
             areaServed: ['AE', 'SA', 'BH', 'QA', 'KW', 'OM']
@@ -464,7 +460,7 @@ function writePage({ slug, title, description, eyebrow, h1, lede, meta, facts, t
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <title>${title}</title>
-    <meta name="description" content="${description}">
+    <meta name="description" content="MAK RESIDENCY - Global Residency &amp; Citizenship Consultants. Expert guidance on UK, US and Portuguese residency and citizenship routes.">
     <meta name="author" content="MAK RESIDENCY">
     <meta name="theme-color" content="#0f1f36">
     <link rel="canonical" href="${url}">
@@ -478,12 +474,12 @@ function writePage({ slug, title, description, eyebrow, h1, lede, meta, facts, t
     <meta property="og:image" content="${SITE}/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="MAK RESIDENCY - global immigration and residency consultants">
+    <meta property="og:image:alt" content="MAK RESIDENCY - Global Residency &amp; Citizenship Consultants">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="${SITE}/assets/og-image.png">
-    <meta name="twitter:image:alt" content="MAK RESIDENCY - global immigration and residency consultants">
+    <meta name="twitter:image:alt" content="MAK RESIDENCY - Global Residency &amp; Citizenship Consultants">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -492,6 +488,7 @@ function writePage({ slug, title, description, eyebrow, h1, lede, meta, facts, t
     <link rel="icon" type="image/svg+xml" href="${p}favicon.svg">
     <link rel="apple-touch-icon" href="${p}assets/apple-touch-icon.png">
     <link rel="me" href="https://www.linkedin.com/company/mak-residency/">
+    <link rel="me" href="https://www.instagram.com/Residency.mak">
 
     ${jsonLdBlock(jsonLd)}
 
@@ -513,7 +510,7 @@ ${meta.map((m, i) => `                <span>${m}</span>${i < meta.length - 1 ? '
             </div>
             <div class="page-hero-actions">
                 <a class="btn btn-primary" href="${p}index.html#contact">Speak to an adviser</a>
-                <a class="btn btn-ghost" href="https://wa.me/923268653443" target="_blank" rel="noopener noreferrer">WhatsApp +92 326 8653443</a>
+                <a class="btn btn-ghost" href="https://wa.me/923219213538" target="_blank" rel="noopener noreferrer">WhatsApp +92 321 9213538</a>
             </div>
         </div>
     </section>

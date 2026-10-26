@@ -75,7 +75,7 @@ export const LEGAL = [
                 h: 'Tell us about a problem',
                 p: [
                     'If you believe something on this site is inaccurate, out of date, or misleading, please contact us and we will look at it.',
-                    'Email <a href="mailto:contact@makresidency.com">contact@makresidency.com</a> or call <a href="tel:+923219213538">+92 321 9213538</a>.'
+                    'Email <a href="mailto:contact@makresidency.com">contact@makresidency.com</a> or call <a href="tel:+923219213585">+92 321 9213585</a>.'
                 ]
             }
         ]
